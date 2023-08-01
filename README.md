@@ -16,3 +16,10 @@ Już teraz wiem, że najmniej kilka rzeczy można usprawnić lub rozszerzyć, ni
 Dziękuję za możliwość zrobienia zadania, skądinąd ciekawego i uruchamiającego całą wiedzę.
 
 Będę bardzo wdzięczny za feedback, zwłaszcza co mogłem zrobić lepiej/inaczej.
+
+## Wersje node i npm
+
+Korzystałem z:
+
+- node v.18.14.2
+- npm v.9.5.0
