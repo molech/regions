@@ -3,7 +3,7 @@
 Już teraz wiem, że najmniej kilka rzeczy można usprawnić lub rozszerzyć, niestety zabrakło mi odrobiny czasu:
 
 - Obsłużyć więcej danych szczegółów państwa, np więcej nazw kraju, państwa sąsiadujące, uatrakcyjnić prezentację danych na tym widoku
-- Rozwinąć przekazywanie properties @Input() do reużywalnych komponentów - duże możliwości ich parametryzacji i rozszerzenia funkcjonalności
+- Rozszerzenie parametryzacji i funkcjonalności reużywalnych komponentów (@Inputs)
 - Rozwinąć wielojęzyczność
 - Dodać kilka reużywalnych komponentów, np element nazwa-wartość ze szczegółów państwa, komponent ikony, badge z ikoną do wizualizacji np czy państwo jest niezależne
 - Dodać np dyrektywę do nagłówków
