@@ -1,0 +1,35 @@
+@import '@angular/cdk/overlay-prebuilt.css'
+@import './reset'
+@import './mixins'
+@import './variables'
+
+body
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  font-family: $fontPrimary
+  font-size: $fontSizeBase
+
+.sr-only
+  position: absolute
+  width: 1px
+  height: 1px
+  padding: 0
+  margin: -1px
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  border: 0
+
+h1
+  font-size: $fontSizeHeading1
+  color: $slate
+  margin-bottom: 32px
+h2
+  font-size: $fontSizeHeading2
+  color: $slate
+  margin-bottom: 20px
+h3
+  font-size: $fontSizeHeading3
+  color: $slate
+  margin-bottom: 20px
+

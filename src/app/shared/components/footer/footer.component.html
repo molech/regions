@@ -1,0 +1,11 @@
+<div class="site-footer">
+  <button (click)="showAuthorInfo()">
+    {{ "common.buttons.aboutMe" | translate }}
+  </button>
+</div>
+
+<ng-template #modalAboutMe>
+  <app-modal modalId="modalAboutMe">
+    {{ modalTitle }}
+  </app-modal>
+</ng-template>

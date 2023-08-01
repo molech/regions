@@ -1,0 +1,20 @@
+@import '../../../../sass/variables'
+
+.regions-list
+  display: flex
+  justify-content: center
+  flex-direction: column
+  flex-wrap: wrap
+  &__card
+    width: pxToRem(300)
+    min-height: pxToRem(70)
+    flex: 0 0 calc(25% - pxToRem(16))
+    align-self: center
+    margin: 0 pxToRem(8) pxToRem(16)
+    cursor: pointer
+    text-align: center
+    & > *
+      height: 100%
+    h2
+      margin: 0
+

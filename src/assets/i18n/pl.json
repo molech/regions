@@ -1,0 +1,9 @@
+{
+  "common": {
+    "homepage": "Strona główna",
+    "buttons": {
+      "goBack": "Cofnij",
+      "aboutMe": "O mnie"
+    }
+  }
+}

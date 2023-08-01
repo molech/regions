@@ -1,7 +1,9 @@
-<p>regions-list works!</p>
+<h1>{{ "regions.list.chooseRegion" | translate }}</h1>
 
-<ul>
-  <li *ngFor="let region of regions">
-    {{ region.region }}
-  </li>
-</ul>
+<div class="regions-list">
+  <div class="regions-list__card" *ngFor="let region of regions">
+    <app-card (click)="goToRegion(region)">
+      <h2>{{ region }}</h2>
+    </app-card>
+  </div>
+</div>

@@ -1,1 +1,10 @@
-<p>countries-list works!</p>
+<h1>{{ regionName }}</h1>
+
+<div class="countries-list">
+  <div class="countries-list__card" *ngFor="let country of countries">
+    <app-card (click)="goToCountry(country.name.common)">
+      <img class="countries-list__flag" [src]="country.flags.svg" />
+      <h3>{{ country.name.common }}</h3>
+    </app-card>
+  </div>
+</div>

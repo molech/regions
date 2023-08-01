@@ -1,0 +1,11 @@
+<div class="site-navbar">
+  <a class="site-navbar__logo" [routerLink]="['/']">
+    <app-logo aria-hidden="true"></app-logo>
+    <span class="sr-only">{{ "common.homepage" | translate }}</span>
+  </a>
+  <nav class="site-navbar__nav">
+    <button (click)="navigateBack()">
+      {{ "common.buttons.goBack" | translate }}
+    </button>
+  </nav>
+</div>

@@ -6,16 +6,11 @@ import {
   ChangeDetectorRef,
 } from "@angular/core";
 import { Subject } from "rxjs";
-import { finalize, takeUntil } from "rxjs/operators";
+import { takeUntil } from "rxjs/operators";
+import { Router } from "@angular/router";
 
-import { RegionsDaoService } from "../../services/regions.dao.service";
-import { Region, Country } from "../../types/regions-model";
-
-// interface Country {
-//   name: string;
-//   capital: string;
-//   population: number;
-// }
+import { Region } from "../../types/regions-models";
+import { RegionsApiService } from "../../services/regions-api.service";
 
 @Component({
   selector: "app-regions-list",
@@ -25,46 +20,41 @@ import { Region, Country } from "../../types/regions-model";
 })
 export class RegionsListComponent implements OnInit, OnDestroy {
   private readonly destroy$ = new Subject<void>();
-  countries: Country[] = [];
-  regions: Region[] = [];
+  regions: string[] = [];
 
   constructor(
-    private regionsDaoService: RegionsDaoService,
-    private changeDetector: ChangeDetectorRef
+    private regionsApiService: RegionsApiService,
+    private changeDetector: ChangeDetectorRef,
+    private router: Router
   ) {}
 
   ngOnInit() {
     this.getRegions();
   }
 
-  private getRegions() {
-    this.regionsDaoService
-      .fetchRegions()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((regions) => {
-        this.regions = regions;
-        const uniqueRegionNames = [
-          ...new Set(regions.map((item: Region) => item.region)),
-        ];
-        this.regions = uniqueRegionNames
-          .map((regionName) => new Region({ region: regionName }))
-          .sort((a, b) => (a.region > b.region ? 1 : -1));
-        this.changeDetector.detectChanges();
-      });
-  }
-
-  private getCountries() {
-    this.regionsDaoService
-      .fetchCountries("europe")
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((countries) => {
-        this.countries = countries;
-        console.log(this.countries);
-      });
-  }
-
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  goToRegion(regionName: string) {
+    this.router.navigate([`/regions/${regionName}`]);
+  }
+
+  private getRegions() {
+    this.regionsApiService
+      .fetchRegions()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((regions: Region[]) => {
+        const uniqueRegionNames = [
+          ...new Set(
+            regions
+              .filter((regionItem: Region) => regionItem.region !== "Antarctic")
+              .map((regionItem: Region) => regionItem.region)
+          ),
+        ];
+        this.regions = uniqueRegionNames;
+        this.changeDetector.detectChanges();
+      });
   }
 }

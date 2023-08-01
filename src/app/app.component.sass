@@ -1,2 +1,11 @@
-body
-  background-color: green
+@import '../sass/variables'
+
+.page-wrapper
+  height: 100vh
+  display: flex
+  flex-direction: column
+  &__content
+    flex: 1 0 auto
+    padding: calc($navbarHeight + 32px) 0 32px
+    background-color: #0093E9
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)

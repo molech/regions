@@ -1,0 +1,14 @@
+@import '../../../../sass/variables'
+
+.card
+  display: flex
+  height: 100%
+  padding: pxToRem(16)
+  border-radius: pxToRem(8)
+  background-color: rgba($white, 0.9)
+  box-shadow: 0 pxToRem(2) pxToRem(4) 0 rgba($black, 0.14)
+  transition: all 150ms linear
+  &:hover
+    transform: scale(1.03)
+  +headings
+    margin: 0
