@@ -35,7 +35,7 @@ export class RegionsApiService {
   }
 
   fetchCountryDetails(country: string): Observable<Country> {
-    const url = `${this.baseUrl}/name/${country}?fullText=true&fields=name`;
+    const url = `${this.baseUrl}/name/${country}?fullText=true&fields=name,capital,independent,region,subregion,languages,latlng,flags,maps,population,coatOfArms,currencies,cioc`;
     return this.http.get<Country[]>(url).pipe(
       map((response) => {
         return response[0];

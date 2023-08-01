@@ -1,10 +1,12 @@
-<h1>{{ regionName }}</h1>
+<h1 *ngIf="countries">
+  {{ "regions.headings.region" | translate }}: {{ regionName }}
+</h1>
 
 <div class="countries-list">
-  <div class="countries-list__card" *ngFor="let country of countries">
-    <app-card (click)="goToCountry(country.name.common)">
+  <div class="countries-list__card-wrap" *ngFor="let country of countries">
+    <app-card (click)="goToCountry(country.name.common)" [isClickable]="true">
       <img class="countries-list__flag" [src]="country.flags.svg" />
-      <h3>{{ country.name.common }}</h3>
+      <h2>{{ country.name.common }}</h2>
     </app-card>
   </div>
 </div>

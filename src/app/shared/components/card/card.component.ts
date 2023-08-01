@@ -7,6 +7,7 @@ import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardComponent {
-  // @Input() centerHorizontal = false;
-  // @Input() centerVertical = false;
+  @Input() isCenteredHorizontally = false;
+  @Input() isCenteredVertically = false;
+  @Input() isClickable = false;
 }

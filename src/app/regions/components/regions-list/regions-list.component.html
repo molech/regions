@@ -1,8 +1,13 @@
-<h1>{{ "regions.list.chooseRegion" | translate }}</h1>
+<h1 *ngIf="regions">{{ "regions.headings.chooseRegion" | translate }}</h1>
 
 <div class="regions-list">
-  <div class="regions-list__card" *ngFor="let region of regions">
-    <app-card (click)="goToRegion(region)">
+  <div class="regions-list__card-wrap" *ngFor="let region of regions">
+    <app-card
+      (click)="goToRegion(region)"
+      [isCenteredVertically]="true"
+      [isCenteredHorizontally]="true"
+      [isClickable]="true"
+    >
       <h2>{{ region }}</h2>
     </app-card>
   </div>

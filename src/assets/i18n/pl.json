@@ -3,7 +3,40 @@
     "homepage": "Strona główna",
     "buttons": {
       "goBack": "Cofnij",
-      "aboutMe": "O mnie"
+      "aboutMe": "O autorze"
+    },
+    "labels": {
+      "yes": "Tak",
+      "no": "Nie"
+    },
+    "placeholders": {
+      "emptyValue": "-"
+    },
+    "aboutMe": {
+      "title": "Trzy słowa o mnie",
+      "content": "I am an experienced frontend developer, specializing in creating advanced features for complex websites and applications. My strengths lie not only in coding, but also in ensuring usability (UX), a sense of aesthetics, and crafting styles that give websites and applications an attractive appearance."
+    }
+  },
+  "regions": {
+    "headings": {
+      "chooseRegion": "Wybierz region",
+      "region": "Region"
+    },
+    "countryDetails": {
+      "labels": {
+        "capital": "Stolica",
+        "independent": "Niezależność",
+        "coatOfArms": "Godło",
+        "currency": "Waluta",
+        "region": "Region",
+        "subregion": "Subregion",
+        "languages": "Języki",
+        "latlng": "Współrzędne",
+        "maps": "Mapy",
+        "googleMaps": "Google Maps",
+        "openStreetMaps": "Open street",
+        "population": "Populacja"
+      }
     }
   }
 }

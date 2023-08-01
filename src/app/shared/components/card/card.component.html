@@ -1,3 +1,10 @@
-<div class="card">
+<div
+  class="card"
+  [ngClass]="{
+    'card--center-horizontal': isCenteredHorizontally,
+    'card--center-vertical': isCenteredVertically,
+    'card--clickable': isClickable,
+  }"
+>
   <ng-content></ng-content>
 </div>
