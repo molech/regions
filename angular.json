@@ -24,6 +24,9 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "sass",
             "assets": ["src/favicon.ico", "src/assets"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/sass/"]
+            },
             "styles": ["src/sass/styles.sass"],
             "scripts": []
           },

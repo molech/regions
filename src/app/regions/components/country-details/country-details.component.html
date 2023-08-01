@@ -1,5 +1,5 @@
-<div class="country-details">
+<div class="country-details" *ngIf="country">
   <app-card class="country-details__card">
-    <h1>{{ country?.name?.common }}</h1>
+    <h1>{{ country.name.common }}</h1>
   </app-card>
 </div>

@@ -5,5 +5,11 @@
       "goBack": "Cofnij",
       "aboutMe": "O mnie"
     }
+  },
+  "regions": {
+    "headings": {
+      "chooseRegion": "Wybierz region",
+      "region": "Region"
+    }
   }
 }

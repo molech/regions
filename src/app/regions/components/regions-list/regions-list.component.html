@@ -1,4 +1,4 @@
-<h1>{{ "regions.list.chooseRegion" | translate }}</h1>
+<h1 *ngIf="regions">{{ "regions.headings.chooseRegion" | translate }}</h1>
 
 <div class="regions-list">
   <div class="regions-list__card" *ngFor="let region of regions">

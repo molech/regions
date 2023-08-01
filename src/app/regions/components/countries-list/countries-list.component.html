@@ -1,4 +1,6 @@
-<h1>{{ regionName }}</h1>
+<h1 *ngIf="countries">
+  {{ "regions.headings.region" | translate }}: {{ regionName }}
+</h1>
 
 <div class="countries-list">
   <div class="countries-list__card" *ngFor="let country of countries">
