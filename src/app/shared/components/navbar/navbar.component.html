@@ -3,8 +3,15 @@
     <app-logo aria-hidden="true"></app-logo>
     <span class="sr-only">{{ "common.homepage" | translate }}</span>
   </a>
-  <nav class="site-navbar__nav">
-    <button (click)="navigateBack()">
+  <nav class="site-navbar__nav" *ngIf="showBackButton">
+    <button
+      appButton
+      class="btn btn--inverted"
+      size="md"
+      icon="fa-light fa-chevron-left"
+      iconPosition="left"
+      (click)="navigateBack()"
+    >
       {{ "common.buttons.goBack" | translate }}
     </button>
   </nav>

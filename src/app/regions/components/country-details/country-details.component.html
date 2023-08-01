@@ -1,5 +1,111 @@
 <div class="country-details" *ngIf="country">
-  <app-card class="country-details__card">
-    <h1>{{ country.name.common }}</h1>
-  </app-card>
+  <div class="country-details__card-wrap">
+    <app-card>
+      <header class="country-details__header">
+        <h1>{{ country.name.common }}</h1>
+        <div class="country-details__subheader">
+          <img class="country-details__flag" [src]="country.flags.svg" />
+          <div class="country-details__cioc" *ngIf="country.cioc">
+            {{ country.cioc }}
+          </div>
+        </div>
+      </header>
+      <div class="country-details__items">
+        <div class="country-details__item">
+          <div class="country-details__item-name">
+            {{ "regions.countryDetails.labels.region" | translate }}
+          </div>
+          <div class="country-details__item-value">{{ country.region }}</div>
+        </div>
+        <div class="country-details__item">
+          <div class="country-details__item-name">
+            {{ "regions.countryDetails.labels.subregion" | translate }}
+          </div>
+          <div class="country-details__item-value">{{ country.subregion }}</div>
+        </div>
+        <div class="country-details__item">
+          <div class="country-details__item-name">
+            {{ "regions.countryDetails.labels.population" | translate }}
+          </div>
+          <div class="country-details__item-value">
+            {{ country.population.toLocaleString("pl-PL") }}
+          </div>
+        </div>
+        <div class="country-details__item">
+          <div class="country-details__item-name">
+            {{ "regions.countryDetails.labels.independent" | translate }}
+          </div>
+          <div class="country-details__item-value">
+            {{
+              country.independent
+                ? ("common.labels.yes" | translate)
+                : ("common.labels.no" | translate)
+            }}
+          </div>
+        </div>
+        <div class="country-details__item">
+          <div class="country-details__item-name">
+            {{ "regions.countryDetails.labels.currency" | translate }}
+          </div>
+          <div class="country-details__item-value">
+            <div *ngFor="let currency of country.currencies | keyvalue">
+              {{ currency.value.name }} ({{ currency.value.symbol }})
+            </div>
+          </div>
+        </div>
+        <div class="country-details__item">
+          <div class="country-details__item-name">
+            {{ "regions.countryDetails.labels.languages" | translate }}
+          </div>
+          <div class="country-details__item-value">
+            <div *ngFor="let language of country.languages | keyvalue">
+              {{ language.value }}
+            </div>
+          </div>
+        </div>
+        <div class="country-details__item">
+          <div class="country-details__item-name">
+            {{ "regions.countryDetails.labels.capital" | translate }}:
+          </div>
+          <div class="country-details__item-value">
+            <ul *ngIf="country.capital">
+              <li *ngFor="let city of country.capital">{{ city }}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="country-details__item">
+          <div class="country-details__item-name">
+            {{ "regions.countryDetails.labels.latlng" | translate }}:
+          </div>
+          <div class="country-details__item-value">
+            <ng-container
+              *ngFor="let latlng of country.latlng; let last = last"
+            >
+              <span>{{ latlng }}</span>
+              <span *ngIf="!last">,</span>
+            </ng-container>
+          </div>
+        </div>
+        <div class="country-details__item">
+          <div class="country-details__item-name">
+            {{ "regions.countryDetails.labels.maps" | translate }}
+          </div>
+          <ul class="country-details__item-value">
+            <li *ngIf="country.maps?.googleMaps">
+              <a [href]="country.maps.googleMaps" target="_blank">
+                <i class="fa-solid fa-location-dot"></i>
+                {{ "regions.countryDetails.labels.googleMaps" | translate }}
+              </a>
+            </li>
+            <li *ngIf="country.maps?.openStreetMaps">
+              <a [href]="country.maps.openStreetMaps" target="_blank">
+                <i class="fa-solid fa-location-dot"></i>
+                {{ "regions.countryDetails.labels.openStreetMaps" | translate }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </app-card>
+  </div>
 </div>

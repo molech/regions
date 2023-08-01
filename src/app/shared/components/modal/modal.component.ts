@@ -17,7 +17,6 @@ import { ModalService } from "../../services/modal/modal.service";
 })
 export class ModalComponent {
   @Input() modalId = "";
-  @Input() isCloseButtonVisible = true;
   @Output() closeModal = new EventEmitter<void>();
 
   constructor(public modalService: ModalService) {}

@@ -10,6 +10,7 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { LogoComponent } from "./components/logo/logo.component";
 import { CardComponent } from "./components/card/card.component";
+import { ButtonComponent } from "./components/button/button.component";
 import { SpinnerComponent } from "./components/spinner/spinner.component";
 import { ModalComponent } from "./components/modal/modal.component";
 
@@ -19,6 +20,7 @@ import { ModalComponent } from "./components/modal/modal.component";
     FooterComponent,
     LogoComponent,
     CardComponent,
+    ButtonComponent,
     SpinnerComponent,
     ModalComponent,
   ],
@@ -27,6 +29,7 @@ import { ModalComponent } from "./components/modal/modal.component";
     FooterComponent,
     LogoComponent,
     CardComponent,
+    ButtonComponent,
     SpinnerComponent,
     ModalComponent,
     DialogModule,

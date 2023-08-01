@@ -1,7 +1,16 @@
 @import 'variables'
 
 .modal-dialog
+  margin: pxToRem(16)
   border-radius: pxToRem(8)
   background-color: $white
+  +min-screen($bpPhone)
+    max-width: 70vw
+  +min-screen($bpLaptop)
+    max-width: 50vw
   &__content
-    padding: pxToRem(50)
+    padding: pxToRem(16)
+
+:host ::ng-deep h3
+  color: $primary
+  margin-bottom: pxToRem(16)

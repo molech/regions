@@ -3,18 +3,35 @@
 .countries-list
   display: flex
   flex-wrap: wrap
-  &__card
-    min-height: 110px
-    flex: 0 0 calc(20% - pxToRem(16))
+  &__card-wrap
+    flex: 0 0 calc(50% - pxToRem(16))
+    min-height: pxToRem(120)
     margin: 0 pxToRem(8) pxToRem(16)
-    cursor: pointer
     text-align: center
-    &:nth-child(5n+1)
-      margin-left: 0
-    &:nth-child(5n)
-      margin-right: 0
-    & > *
-      height: 100%
   &__flag
-    height: pxToRem(40)
+    height: pxToRem(30)
     margin: 0 auto pxToRem(16)
+  h2
+    font-size: pxToRem(14)
++min-screen($bpPhone)
+  .countries-list
+    &__card-wrap
+      flex: 0 0 calc(33.33% - pxToRem(11))
+      &:nth-child(n)
+        margin-left: pxToRem(8)
+        margin-right: pxToRem(8)
+      &:nth-child(3n+1)
+        margin-left: 0
+      &:nth-child(3n)
+        margin-right: 0
++min-screen($bpLaptop)
+  .countries-list
+    &__card-wrap
+      flex: 0 0 calc(16.66% - pxToRem(16))
+      &:nth-child(n)
+        margin-left: pxToRem(8)
+        margin-right: pxToRem(8)
+      &:nth-child(6n+1)
+        margin-left: 0
+      &:nth-child(6n)
+        margin-right: 0
